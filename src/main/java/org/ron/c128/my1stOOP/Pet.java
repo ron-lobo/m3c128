@@ -1,15 +1,13 @@
 package org.ron.c128.my1stOOP;
 
-public class Pet {
+public abstract class Pet {
 
-    private String name;
-    private String type;
+    private final String name;
+    private final String type;
     private int age;
     private char size; // S/M/L
-    private boolean isMale;
+    private final boolean isMale;
     // colour
-
-    // public Pet() {}
 
     public Pet(String name, String type, int age, char size, boolean isMale) {
         this.name = name;
@@ -31,15 +29,37 @@ public class Pet {
         }
     }
 
-    public static void main(String[] args) {
-        Pet rover = new Pet("Rover", "dog", 4, 'S', true);
-        Pet felix = new Pet("Felix", "cat", 3, 'M', true);
-        Pet pet3 = new Pet("Polly", "parrot", 8, 'L', false);
+    public abstract void expressJoy();
 
-        felix.printInfo();
-        System.out.println();
+    public void getExercise() {
+        System.out.println(name + " runs around");
+    }
 
-        Pet[] myPets = new Pet[]{rover, felix, pet3};
-        printPetsInfo(myPets);
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public char getSize() {
+        return size;
+    }
+
+    public void setSize(char size) {
+        this.size = size;
+    }
+
+    public boolean isMale() {
+        return isMale;
     }
 }
