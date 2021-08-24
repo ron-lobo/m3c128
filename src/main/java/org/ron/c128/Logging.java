@@ -8,6 +8,9 @@ public class Logging {
 
     private final StringBuilder sb = new StringBuilder();
 
+    static {
+        System.setProperty("java.util.logging.SimpleFormatter.format", "[%1$tF %1$tT] [%4$-7s] %5$s%n");
+    }
 
     public void m1() {
         System.out.println("m1()");
