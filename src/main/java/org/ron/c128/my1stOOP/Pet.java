@@ -7,11 +7,10 @@ public abstract class Pet {
     private int age;
     private char size; // S/M/L
     private final boolean isMale;
-    // colour
 
-    public Pet(String name, String type, int age, char size, boolean isMale) {
+    public Pet(String name, int age, char size, boolean isMale) {
         this.name = name;
-        this.type = type;
+        this.type = getClass().getSimpleName();
         this.age = age;
         this.size = size;
         this.isMale = isMale;
@@ -19,11 +18,12 @@ public abstract class Pet {
 
     public void printInfo() {
         String gender = isMale ? "male" : "female";
-        System.out.println("The pet is a " + size + " size " + age + " year old " + gender + " " + type + " named " + name);
+        System.out.printf("The pet is a %1$s size %2$s year old %3$s %4$s named %5$s%n", size, age, gender, type,  name);
     }
 
     public static void printPetsInfo(Pet[] pets) {
-        System.out.println("you have " + pets.length + " pets:");
+        System.out.println("A: you have " + pets.length + " pets:");
+        System.out.printf("B: you have %1$,10.3f pets:%n", pets.length*1234.123);
         for (Pet pet : pets) {
             pet.printInfo();
         }

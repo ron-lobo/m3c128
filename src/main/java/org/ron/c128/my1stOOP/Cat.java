@@ -3,7 +3,7 @@ package org.ron.c128.my1stOOP;
 public class Cat extends Pet {
 
     public Cat(String name, int age, char size, boolean isMale) {
-        super(name, "cat", age, size, isMale);
+        super(name, age, size, isMale);
     }
 
     public void expressJoy() {
