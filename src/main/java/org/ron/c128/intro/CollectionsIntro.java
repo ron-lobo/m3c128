@@ -2,9 +2,7 @@ package org.ron.c128.intro;
 
 import org.ron.c128.my1stOOP.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class CollectionsIntro {
 
@@ -20,38 +18,61 @@ public class CollectionsIntro {
         CollectionsIntro ci = new CollectionsIntro();
         ci.arrays();
         ci.lists();
+        ci.sets();
+    }
+
+    private void sets() {
+        System.out.println("\nSets");
+        Set<Pet> petSet = new HashSet<>();
+        processCollection(petSet, "HashSet");
     }
 
     private void lists() {
         System.out.println("\nLists");
         List<Pet> pets1 = new ArrayList<>();
-        processList(pets1);
+        processCollection(pets1, "ArrayList");
         // ((ArrayList<Pet>) pets1).trimToSize();
 
         List<Pet> pets0 = new LinkedList<>();
-        processList(pets0);
+        processCollection(pets0, "LinkedList");
+
+//        List<Pet> myPetsList = List.of(rover);
+//        // processList(myPetsList);
+//        List<String> strings = List.of("123", "xyz");
+//
+//        System.out.println("myPetsList size=" + myPetsList.size());
+//        System.out.println("strings size=" + strings.size());
     }
 
-    private void processList(List<Pet> pets) {
-        System.out.println("\nProcessing List");
+    private void processCollection(Collection<Pet> pets, String text) {
+        System.out.println("\nProcessing Collection: " + text);
         System.out.println("pets.size = " + pets.size());
         pets.add(rover);
         pets.add(rover);
         pets.add(felix);
         pets.add(polly);
-        pets.add(1, rango);
-        boolean isRoverRemoved = pets.remove(0) == rover;
+        pets.add(rover);
+        pets.add(rover);
+        pets.add(lizzy);
+        pets.add(lizzy);
+        pets.add(null);
+        if (pets instanceof List) {
+            List<Pet> petsList = (List<Pet>) pets;
+            petsList.add(1, rango);
+            boolean isRoverRemoved = petsList.remove(0) == rover;
+            System.out.printf(" Rover removed: %1$b%n", isRoverRemoved);
+        }
         boolean isLizzyRemoved = pets.remove(lizzy);
-        System.out.printf(" Rover removed: %1$b, Lizzy removed: %2$b%n", isRoverRemoved, isLizzyRemoved);
+        System.out.printf(" Lizzy removed: %1$b%n", isLizzyRemoved);
         System.out.println("pets.size = " + pets.size());
         for (Pet pet : pets) {
-            System.out.println("pet name is " + pet.getName());
+            System.out.println(pet == null ? "<null pet>" : "pet name = " + pet.getName());
         }
 
         if (pets.contains(rover)) {
-            System.out.println("Rover is in list pets");
+            System.out.println("Rover is in pets");
         }
-        System.out.printf("Lizzy is %1$s list pets", pets.contains(lizzy) ? "in" : "not in");
+        System.out.printf("Lizzy is %1$s pets%n", pets.contains(lizzy) ? "in" : "not in");
     }
 
     public void arrays() {
