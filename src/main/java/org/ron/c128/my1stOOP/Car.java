@@ -37,5 +37,8 @@ public class Car {
         direction = newDirection;
     }
 
-
+    public boolean equals(Object obj) {
+        Car c = (Car) obj;
+        return this.model == c.model && this.licencePlate == c.licencePlate;
+    }
 }
