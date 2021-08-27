@@ -36,12 +36,11 @@ public class CollectionsIntro {
         List<Pet> pets0 = new LinkedList<>();
         processCollection(pets0, "LinkedList");
 
-//        List<Pet> myPetsList = List.of(rover);
-//        // processList(myPetsList);
-//        List<String> strings = List.of("123", "xyz");
-//
-//        System.out.println("myPetsList size=" + myPetsList.size());
-//        System.out.println("strings size=" + strings.size());
+        List<Pet> myPetsList = List.of(rover, felix, rover, felix, felix);
+        // processCollection(myPetsList, "immutable list");
+        List<String> strings = List.of("123", "xyz");
+        System.out.println("\nmyPetsList size=" + myPetsList.size());
+        System.out.println("strings size=" + strings.size());
     }
 
     private void processCollection(Collection<Pet> pets, String text) {
