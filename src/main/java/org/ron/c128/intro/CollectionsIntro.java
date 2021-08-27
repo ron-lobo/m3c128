@@ -18,6 +18,7 @@ public class CollectionsIntro {
         CollectionsIntro ci = new CollectionsIntro();
         ci.arrays();
         ci.lists();
+        ci.mutableLists();
         ci.sets();
     }
 
@@ -41,6 +42,37 @@ public class CollectionsIntro {
         List<String> strings = List.of("123", "xyz");
         System.out.println("\nmyPetsList size=" + myPetsList.size());
         System.out.println("strings size=" + strings.size());
+    }
+
+    private void mutableLists() {
+        System.out.println("\nMutable Lists");
+
+        List<Pet> petList1 = addToMutableList(null, rover, felix, rover, felix, felix);
+        addToMutableList(petList1, felix, felix, polly);
+
+        List<Pet> petList2 = addToMutableList(null);
+
+        List<Car> carList1 = addToMutableList(null, new Car("Q1", "VW Beetle"));
+
+        System.out.println("petList1 size = " + petList1.size());
+        System.out.println("petList2 size = " + petList2.size());
+        System.out.println("carList1 size = " + carList1.size());
+    }
+
+    private <T> List<T> addToMutableList(List<T> list, T ... pets) {
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        for (T pet : pets) {
+            list.add(pet);
+        }
+        return list;
+    }
+
+    private List<Pet> createMutablePetList(Pet ... pets) {
+        List<Pet> petList = new ArrayList<>();
+        petList.addAll(Arrays.asList(pets));
+        return petList;
     }
 
     private void processCollection(Collection<Pet> pets, String text) {
