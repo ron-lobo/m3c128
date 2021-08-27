@@ -1,4 +1,4 @@
-package org.ron.c128.my1stOOP;
+package org.ron.c128.my1stOOP.pet;
 
 public abstract class Pet {
 
@@ -27,6 +27,10 @@ public abstract class Pet {
         for (Pet pet : pets) {
             pet.printInfo();
         }
+    }
+
+    protected void abc() {
+        System.out.println("hi I'm abc");
     }
 
     public abstract void expressJoy();

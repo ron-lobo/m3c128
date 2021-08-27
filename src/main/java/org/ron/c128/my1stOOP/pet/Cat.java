@@ -1,4 +1,4 @@
-package org.ron.c128.my1stOOP;
+package org.ron.c128.my1stOOP.pet;
 
 public class Cat extends Pet {
 

@@ -1,6 +1,7 @@
 package org.ron.c128.intro;
 
-import org.ron.c128.my1stOOP.*;
+import org.ron.c128.my1stOOP.car.Car;
+import org.ron.c128.my1stOOP.pet.*;
 
 import java.util.*;
 

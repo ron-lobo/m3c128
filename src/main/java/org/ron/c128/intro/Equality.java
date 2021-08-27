@@ -1,6 +1,6 @@
 package org.ron.c128.intro;
 
-import org.ron.c128.my1stOOP.Car;
+import org.ron.c128.my1stOOP.car.Car;
 
 public class Equality {
 

@@ -1,9 +1,10 @@
-package org.ron.c128.my1stOOP;
+package org.ron.c128.my1stOOP.car;
 
 public class Car {
 
     private final String licencePlate;
     private final String model;
+
 
     private int speed;
     private char direction;

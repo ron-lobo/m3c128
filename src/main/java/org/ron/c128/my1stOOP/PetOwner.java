@@ -1,5 +1,7 @@
 package org.ron.c128.my1stOOP;
 
+import org.ron.c128.my1stOOP.pet.*;
+
 public class PetOwner {
 
     public static void main(String[] args) {
