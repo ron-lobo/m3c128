@@ -2,6 +2,7 @@ package org.ron.c128.intro;
 
 import org.ron.c128.my1stOOP.car.Car;
 import org.ron.c128.my1stOOP.car.Engine;
+import org.ron.c128.my1stOOP.pet.Cat;
 
 public class Equality {
 
@@ -22,6 +23,13 @@ public class Equality {
         equality.testEquality(car2, car3);
         equality.testEquality(car1, car4);
         equality.testEquality(car4, car5);
+
+        System.out.println("car4.equals(123) : " + car4.equals("123"));
+        System.out.println("car4.equals(cat) : " + car4.equals(new Cat("", 1, 'S', true)));
+
+        System.out.println("car4.equals(null) : " + car4.equals(null));
+
+        System.out.println("dieselEngine.equals(null) : " + dieselEngine.equals(null));
     }
 
     public boolean testEquality(Car carA, Car carB) {

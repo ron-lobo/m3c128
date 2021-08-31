@@ -1,5 +1,7 @@
 package org.ron.c128.my1stOOP.car;
 
+import java.util.Objects;
+
 public class Car {
 
     private final String licencePlate;
@@ -55,13 +57,22 @@ public class Car {
         this.engine = engine;
     }
 
+    @Override
     public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != getClass()) return false;
         Car c = (Car) obj;
         return model.equals(c.model) &&
                 licencePlate.equals(c.licencePlate) &&
                 (engine == null ? c.engine == null : engine.equals(c.engine));
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(licencePlate, model, engine, speed, direction);
+    }
+
+    @Override
     public String toString() {
         return "Car {" +
                 "licencePlate = " + licencePlate +

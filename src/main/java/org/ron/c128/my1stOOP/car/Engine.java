@@ -1,5 +1,7 @@
 package org.ron.c128.my1stOOP.car;
 
+import java.util.Objects;
+
 public class Engine {
 
     private final int sizeInMils;
@@ -38,8 +40,9 @@ public class Engine {
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != getClass()) return false;
         Engine e = (Engine) obj;
-        return sizeInMils == e.sizeInMils &&
-                (fuelType == null ? e.fuelType == null : fuelType.equals(e.fuelType));
+        return sizeInMils == e.sizeInMils && Objects.equals(fuelType, e.fuelType);
     }
 }
