@@ -42,6 +42,12 @@ public class Scope {
         s0.m1();
         //m1();
         m0(0);
+
+//        InnerClasses innerClasses = new InnerClasses();
+//        InnerClasses.Course c1 = innerClasses.new Course("", ""); // very, very rare
+//        innerClasses.doSomething().getInstructor();
+
+        InnerClasses.Lecturer lecturer1 = new InnerClasses.Lecturer("Minerva");
     }
 
 
