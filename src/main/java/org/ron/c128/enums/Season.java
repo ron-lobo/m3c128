@@ -43,7 +43,9 @@ public enum Season {
 
     public LocalDate getNextStartDate() {
         // processing to compute next start date
-        return null;
+        LocalDate now = LocalDate.now();
+        LocalDate startDate = getStart(now.getYear());
+        return now.isBefore(startDate) ? startDate : startDate.withYear(now.getYear()+1);
     }
 
     public static Season getSeason(String str) {
